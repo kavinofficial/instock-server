@@ -1,0 +1,30 @@
+@host = http://localhost:8080
+
+### Get all customers
+GET {{ host }}/api/customers
+
+### Get customer by ID
+GET {{ host }}/api/customer/1
+
+### Create a new customer
+POST {{ host }}/api/customer
+Content-Type: application/json
+
+{
+  "customerName": "John Doe",
+  "mobile": "1234567890",
+  "created": "2022-01-01"
+}
+
+### Update customer by ID
+PUT {{ host }}/api/customer/1
+Content-Type: application/json
+
+{
+  "customerName": "Updated Name",
+  "mobile": "9876543210",
+  "created": "2022-02-01"
+}
+
+### Delete customer by ID
+DELETE {{ host }}/api/customer/1
