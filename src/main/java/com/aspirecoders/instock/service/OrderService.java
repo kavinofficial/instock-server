@@ -6,6 +6,7 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.aspirecoders.instock.enums.OrderStatus;
 import com.aspirecoders.instock.model.Order;
 import com.aspirecoders.instock.repository.OrderRepo;
 
@@ -60,5 +61,9 @@ public class OrderService {
         } catch (Exception e) {
             return false;
         }
+    }
+
+    public int getCount(OrderStatus orderStatus) {
+        return orderRepo.getCountOfStatus(orderStatus);
     }
 }

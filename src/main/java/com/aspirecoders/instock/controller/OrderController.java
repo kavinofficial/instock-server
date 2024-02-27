@@ -14,8 +14,10 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.aspirecoders.instock.enums.OrderStatus;
 import com.aspirecoders.instock.model.Order;
 import com.aspirecoders.instock.service.OrderService;
+import org.springframework.web.bind.annotation.RequestParam;
 
 @RestController
 @RequestMapping("/api/order")
@@ -53,4 +55,10 @@ public class OrderController {
         }
         return ResponseEntity.internalServerError().body("Deletion aborted");
     }
+
+    @GetMapping("/count/{status}")
+    public int getMethodName(@PathVariable OrderStatus status) {
+        return orderService.getCount(status);
+    }
+
 }

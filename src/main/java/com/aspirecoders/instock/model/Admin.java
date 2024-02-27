@@ -1,6 +1,6 @@
 package com.aspirecoders.instock.model;
 
-import java.util.Date;
+import java.sql.Date;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -8,14 +8,16 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import lombok.Data;
 
-@Data
 @Entity
-public class Inventory {
+@Data
+public class Admin {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private long inventoryId;
-    private long adminId;
-    private long productId;
-    private int stocks;
-    private Date createdAt;
+    private int adminId;
+    private String firstName;
+    private String lastName;
+    private String email;
+    private String password;
+    private Date timestamp;
+
 }

@@ -12,10 +12,7 @@ import lombok.Data;
 @Table(name = "Brands")
 public class Brand {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long brandId;
     private String brandName;
-    private String brandDescription;
-    private String brandCountry;
-    private String brandLogo;
 }

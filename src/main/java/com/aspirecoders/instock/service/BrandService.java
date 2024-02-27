@@ -30,10 +30,6 @@ public class BrandService {
         Brand existingBrand = brandRepo.findById(brandId).orElse(null);
 
         if (existingBrand != null) {
-            existingBrand.setBrandName(brand.getBrandName());
-            existingBrand.setBrandDescription(brand.getBrandDescription());
-            existingBrand.setBrandCountry(brand.getBrandCountry());
-            existingBrand.setBrandLogo(brand.getBrandLogo());
             return brandRepo.save(existingBrand);
         }
 

@@ -41,14 +41,8 @@ public class InventoryService {
 
     public Inventory editInventory(int id, Inventory inv) {
         Inventory old = inventoryRepo.findById(id).orElse(null);
-        old.setCategory_id(id);
-        old.setCreated(inv.getCreated());
-        old.setDescription(inv.getDescription());
-        old.setImage(inv.getImage());
-        old.setPrice(inv.getPrice());
-        old.setProd_id(inv.getProd_id());
-        old.setStocks(inv.getStocks());
-        inventoryRepo.saveAndFlush(old);
+        if(old!=null)
+            return inventoryRepo.saveAndFlush(old);
         return old;
     }
 

@@ -14,9 +14,13 @@ import java.util.Date;
 @Table(name = "Products")
 public class Product {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long productId;
-    private Long brandId;
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private long productIdd;
+    private long brandId;
+    private long categoryId;
     private String productName;
+    private byte[] image;
+    private String description;
+    private double price;
     private Date createdAt;
 }
