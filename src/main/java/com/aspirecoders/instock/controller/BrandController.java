@@ -21,27 +21,27 @@ public class BrandController {
   @Autowired
   private BrandService brandService;
 
-  @GetMapping("/brands")
+  @GetMapping("/brand")
   public List<Brand> getAllBrands() {
     return brandService.getAllBrands();
   }
 
-  @GetMapping("/brands/{id}")
+  @GetMapping("/brand/{id}")
   public Brand getBrandById(@PathVariable long id) {
     return brandService.getBrandById(id);
   }
 
-  @PostMapping("/brands")
+  @PostMapping("/brand")
   public Brand createBrand(@RequestBody Brand brand) {
     return brandService.createBrand(brand);
   }
 
-  @PutMapping("/brands/{id}")
+  @PutMapping("/brand/{id}")
   public Brand updateBrand(@PathVariable long id, @RequestBody Brand brand) {
     return brandService.updateBrand(id, brand);
   }
 
-  @DeleteMapping("/brands/{id}")
+  @DeleteMapping("/brand/{id}")
   public void deleteBrand(@PathVariable long id) {
     brandService.deleteBrand(id);
   }

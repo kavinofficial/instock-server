@@ -42,16 +42,9 @@ public class OrderService {
 
     public Order editOrder(long id, Order inv) {
         Order old = orderRepo.findById(id).orElse(null);
-        old.setCreatedAt(inv.getCreatedAt());
-        old.setCustomerId(inv.getCustomerId());
-        old.setDeliveryStatus(inv.getDeliveryStatus());
-        old.setOrderId(inv.getOrderId());
-        old.setProductId(inv.getProductId());
-        old.setQuantity(inv.getQuantity());
-        old.setStatus(inv.getStatus());
-        old.setTotalAmount(inv.getTotalAmount());
-        orderRepo.saveAndFlush(old);
-        return old;
+        if (old != null)
+            orderRepo.saveAndFlush(old);
+        return null;
     }
 
     public boolean deleteById(long id) {
