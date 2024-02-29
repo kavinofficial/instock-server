@@ -1,0 +1,32 @@
+@host = http://localhost:8080
+
+### Get All Users
+GET {{ host }}/users
+
+### Get User by ID
+GET {{ host }}/users/1
+
+### Create User
+POST {{ host }}/users/add
+Content-Type: application/json
+
+{
+  "firstName": "John",
+  "lastName": "Doe",
+  "email": "john.doe@example.com",
+  "password": "password123"
+}
+
+### Update User
+PUT {{ host }}/users/1
+Content-Type: application/json
+
+{
+  "firstName": "Updated",
+  "lastName": "User",
+  "email": "updated.user@example.com",
+  "password": "newpassword123"
+}
+
+### Delete User
+DELETE {{ host }}/users/1

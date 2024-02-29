@@ -1,0 +1,32 @@
+@host = http://localhost:8080
+
+### Get all brands
+GET {{ host }}/api/brands
+
+### Get brand by ID
+GET {{ host }}/api/brands/1
+
+### Create a new brand
+POST {{ host }}/api/brands
+Content-Type: application/json
+
+{
+  "brandName": "Nike",
+  "brandDescription": "Sportswear and equipment",
+  "brandCountry": "United States",
+  "brandLogo": "https://example.com/nike-logo.png"
+}
+
+### Update brand by ID
+PUT {{ host }}/api/brands/1
+Content-Type: application/json
+
+{
+  "brandName": "Updated Brand",
+  "brandDescription": "Updated description",
+  "brandCountry": "Updated country",
+  "brandLogo": "https://example.com/updated-logo.png"
+}
+
+### Delete brand by ID
+DELETE {{ host }}/api/brands/1
